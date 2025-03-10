@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.practiceandroidstudio.databinding.FragmentSecond2Binding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
+
 class Second2Fragment : Fragment() {
 
     private var _binding: FragmentSecond2Binding? = null

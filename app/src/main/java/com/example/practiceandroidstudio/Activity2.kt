@@ -30,11 +30,10 @@ class Activity2 : AppCompatActivity() {
                 .setAnchorView(R.id.fab).show()
         }
 
-        // Додаємо кнопку для повернення на головну активність
         findViewById<Button>(R.id.button_back).setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()  // Завершуємо Activity2, щоб не зберігати його в стеку
+            finish()
         }
     }
 

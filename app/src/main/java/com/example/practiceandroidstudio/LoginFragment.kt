@@ -15,14 +15,14 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val etEmail = view.findViewById<EditText>(R.id.etEmail)
-        val etPassword = view.findViewById<EditText>(R.id.etPassword)
+        val ecEmail = view.findViewById<EditText>(R.id.etEmail)
+        val ecPassword = view.findViewById<EditText>(R.id.etPassword)
         val btnLogin = view.findViewById<Button>(R.id.btnLogin)
-        val tvRegister = view.findViewById<TextView>(R.id.tvRegister)
+        val btnRegister = view.findViewById<TextView>(R.id.tvRegister)
 
         btnLogin.setOnClickListener {
-            val inputEmail = etEmail.text.toString().trim()
-            val inputPassword = etPassword.text.toString().trim()
+            val inputEmail = ecEmail.text.toString().trim()
+            val inputPassword = ecPassword.text.toString().trim()
 
             // Отримуємо збережені дані
             val sharedPreferences = requireActivity().getSharedPreferences("user_pref", Context.MODE_PRIVATE)
@@ -38,7 +38,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
 
 
-        tvRegister.setOnClickListener {
+        btnRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registrationFragment)
         }
     }

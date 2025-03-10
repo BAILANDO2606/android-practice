@@ -52,10 +52,8 @@ class Fragment2 : Fragment(R.layout.fragment_activity2) {
         if (resultCode == android.app.Activity.RESULT_OK && data != null) {
             when (requestCode) {
                 REQUEST_IMAGE_PICK -> {
-                    // Отримуємо URI з галереї
                     val imageUri = data.data
                     imageUri?.let {
-                        // Копіюємо зображення у внутрішнє сховище
                         val localPath = copyImageToInternalStorage(it)
                         localPath?.let { path ->
                             // Встановлюємо зображення з локального файлу
