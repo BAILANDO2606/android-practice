@@ -13,18 +13,18 @@ import android.widget.Button
 
 class Activity2 : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: Activity2Binding
+    private lateinit var toolbarConfig: AppBarConfiguration
+    private lateinit var activityBinding: Activity2Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = Activity2Binding.inflate(layoutInflater)
-        setContentView(binding.root)
+        activityBinding = Activity2Binding.inflate(layoutInflater)
+        setContentView(activityBinding.root)
 
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(activityBinding.toolbar)
 
-        binding.fab.setOnClickListener { view ->
+        activityBinding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
@@ -40,7 +40,7 @@ class Activity2 : AppCompatActivity() {
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_2)
-        return navController.navigateUp(appBarConfiguration)
+        return navController.navigateUp(toolbarConfig)
                 || super.onSupportNavigateUp()
     }
 }
